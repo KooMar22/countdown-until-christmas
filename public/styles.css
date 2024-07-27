@@ -1,0 +1,64 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100dvh;
+    width: 100dvw;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100dvh;
+    text-align: center;
+}
+
+.header,
+.footer {
+    width: 100%;
+    padding-left: 0;
+    justify-self: center;
+    background: whitesmoke;
+    font-style: italic;
+    padding: 0.5rem 0;
+}
+
+.counter {
+    background: wheat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.countdown {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.countdown h2 {
+    font-size: 1.3rem;
+    font-family: "Arial", sans-serif;
+    color: blue;
+    border-radius: 5px;
+}
+
+.cestitka {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: 0.3rem;
+    margin: 0 10%;
+}
+
+.cestitka h1 {
+    color: red;
+}
+
+.cestitka p {
+    color: black;
+    font-family: "Arial", sans-serif;
+    font-style: italic;
+    font-size: 1.3rem;
+}
