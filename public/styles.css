@@ -32,13 +32,14 @@ body {
 
 .countdown {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
-    gap: 0.3rem;
+    grid-column-gap: 2.5rem;
+    grid-row-gap: 0.3rem;
 }
 
 .countdown h2 {
-    font-size: 1.3rem;
+    font-size: 1.7rem;
     font-family: "Arial", sans-serif;
     color: blue;
     border-radius: 5px;
@@ -62,3 +63,13 @@ body {
     font-style: italic;
     font-size: 1.3rem;
 }
+
+@media (max-width: 768px) {
+    .countdown {
+        grid-template-columns: 1fr;
+    }
+
+    .countdown h2 {
+        font-size: 1.3rem;
+    }
+} 
