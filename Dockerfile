@@ -1,22 +1,13 @@
-FROM node:20-alpine
-
-# Postavljamo radni direktorij unutar kontejnera
+# 1. Build the React application
+FROM node:14 AS build
 WORKDIR /app
-
-# Kopiramo package.json i package-lock.json (ako postoji)
-COPY package*.json ./
-
-# Instaliramo ovisnosti
+COPY package.json package-lock.json ./
 RUN npm install
-
-# Kopiramo ostatak aplikacije u kontejner
-COPY . .
-
-# Build-amo aplikaciju
+COPY . ./
 RUN npm run build
 
-# Eksponiramo port koji Vite koristi za preview (obično 4173)
-EXPOSE 4173
-
-# Pokrećemo buildanu aplikaciju u preview načinu rada s --host opcijom
-CMD ["npm", "run", "preview", "--", "--host"]
+# 2. Serve the application using Nginx
+FROM nginx:alpine
+COPY --from=build /app/dist /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
