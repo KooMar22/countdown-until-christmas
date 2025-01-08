@@ -1,11 +1,9 @@
-import Header from "./Header";
-import Footer from "./Footer";
-import ChristmasCountdown from "./ChristmasCountdown";
+import Footer from "./components/Footer";
+import ChristmasCountdown from "./components/ChristmasCountdown";
 
 function App() {
   return (
     <div className="container">
-      < Header />
       < ChristmasCountdown />
       < Footer />
     </div>
